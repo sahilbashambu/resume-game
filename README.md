@@ -1,2 +1,2 @@
 # resume-game
-This is my Resume in game format. 
+My Resume in a game format. 

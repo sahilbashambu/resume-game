@@ -175,7 +175,8 @@ function gamecreate(){
 	mail.animations.add('run');
 	mail.animations.play('run',2,true);
 
-	//game.add.button(17850,h-(100-2)-(0.50*418),'mail',openGmail,this).scale.setTo(0.50,0.50);
+	let mailicon = game.add.button(17850,h-(100-2)-(232),'button',openGmail,this);
+	mailicon.alpha=0;
 
 
 

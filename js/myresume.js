@@ -14,7 +14,8 @@ var hashnode_url="https://TheQuirkyBit.com";
 var pokemon_url = "https://cvee.me/pokemon";
 var start_text;
 var end_text;
-var platformLength =19700;
+var offsetNewCompany = 600;
+var platformLength =19700+offsetNewCompany;
 var start_point=150;
 var starting_y_point = -200;
 var back_btn;
@@ -24,12 +25,18 @@ var flag;
 var flagbool = true;
 
 //use for simplify the length of assets in game
-var milestone1;
-var milestone2;
-var milestone3;
-var milestone4;
-var milestone5;
-var milestone6;
+
+var milestone1 = 1500; //intro
+var milestone2 = 4250; //education
+var milestone3 = 7400; //experience
+var milestonemountain = 6650;
+var milestonewindmill = 9550+offsetNewCompany; //windmill
+var milestone4 = 10050+offsetNewCompany;
+var milestone5 =11900+offsetNewCompany;
+var milestone6=13300+offsetNewCompany;
+var milestone7=17600+offsetNewCompany;
+var milestoneflag = 18900+offsetNewCompany;
+var milestoneplane = 20000+offsetNewCompany;
 
 var myresume = {
     create:function(){
@@ -75,68 +82,71 @@ function gamecreate(){
 	grass.scale.setTo(0.5,0.5);
 
 // Adding main Title tree
-	tree1 = game.add.sprite(300,h-(100-1)-(1.25*464),'starttree');
+	tree1 = game.add.sprite(milestone1-1200,h-(100-1)-(1.25*464),'starttree');
 	tree1.scale.setTo(1.25,1.25);
 
-	let bushes = game.add.sprite(1300,h-(100-2)-(0.60*190),'bushes');
+	let bushes = game.add.sprite(milestone1-200,h-(100-2)-(0.60*190),'bushes');
 	bushes.scale.setTo(0.60,0.60);
+
+
 	//About Section
-	game.add.sprite(1500,h-(100-2)-(1.25*127),'about').scale.setTo(1.25,1.25);
-	game.add.sprite(1700,h-(100-5)-(1*359),'intro');
-	game.add.sprite(2500,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
-	game.add.sprite(2700,h-(100-2)-(1*431),'india');
-	game.add.sprite(3480,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone1,h-(100-2)-(1.25*127),'about').scale.setTo(1.25,1.25);
+	game.add.sprite(milestone1+200,h-(100-5)-(1*359),'intro');
+	game.add.sprite(milestone1+1000,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone1+1200,h-(100-2)-(1*431),'india');
+	game.add.sprite(milestone1+1980,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
 
 	//Education Section
-	let bushes1 = game.add.sprite(3900,h-(100-2)-(0.60*190),'bushes');
+	let bushes1 = game.add.sprite(milestone2-350,h-(100-2)-(0.60*190),'bushes');
 	bushes1.scale.setTo(0.60,0.60);
-	game.add.sprite(4100,h-(100-2)-(1.25*127),'education').scale.setTo(1.25,1.25);;
+	game.add.sprite(milestone2-150,h-(100-2)-(1.25*127),'education').scale.setTo(1.25,1.25);;
 
-	game.add.sprite(4250,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
-	game.add.sprite(4550,h-(100-2)-(1*378),'school');
-	game.add.sprite(5100,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
-	game.add.sprite(5350,h-(100-2)-(1.25*128),'colahead').scale.setTo(1.25,1.25);;
-	game.add.sprite(5500,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
-	game.add.sprite(5750,h-(100-2)-(1.25*253),'college').scale.setTo(1.25,1.25);;
-	game.add.sprite(6400,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone2,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone2+300,h-(100-2)-(1*378),'school');
+	game.add.sprite(milestone2+850,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone2+1100,h-(100-2)-(1.25*128),'colahead').scale.setTo(1.25,1.25);;
+	game.add.sprite(milestone2+1250,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone2+1500,h-(100-2)-(1.25*253),'college').scale.setTo(1.25,1.25);;
+	game.add.sprite(milestone2+2150,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
 
-	game.add.sprite(6650,h-(100-2)-0.80*400,'mountain').scale.setTo(0.80,0.80);
+	game.add.sprite(milestonemountain,h-(100-2)-0.80*400,'mountain').scale.setTo(0.80,0.80);
 
 	//Experience Section
-	let bushes2 = game.add.sprite(7050,h-(100-2)-(0.60*190),'bushes');
+	let bushes2 = game.add.sprite(milestone3-350,h-(100-2)-(0.60*190),'bushes');
 	bushes2.scale.setTo(0.60,0.60);
-	game.add.sprite(7250,h-(100-2)-(1.25*127),'experience').scale.setTo(1.25,1.25);;
+	game.add.sprite(milestone3-150,h-(100-2)-(1.25*127),'experience').scale.setTo(1.25,1.25);;
 
-	game.add.sprite(7400,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
-	game.add.sprite(7700,h-(100-2)-(0.90*610),'company').scale.setTo(0.90,0.90);
-	game.add.sprite(8250,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
-	game.add.sprite(8500,h-(100-2)-(1.25*128),'startupzone').scale.setTo(1.25,1.25);;
-	game.add.sprite(8650,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
-	game.add.sprite(8900,h-(100-2)-(1*326),'startup');
-	game.add.sprite(9300,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone3,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone3+300,h-(100-2)-(0.90*610),'company').scale.setTo(0.90,0.90);
+	game.add.sprite(milestone3+850,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone3+1150,h-(100-2)-(0.90*574),'company2').scale.setTo(0.90,0.90);
+	game.add.sprite(milestone3+1700,h-(100-2)-(1.25*128),'startupzone').scale.setTo(1.25,1.25);
+	game.add.sprite(milestone3+1850,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone3+2100,h-(100-2)-(1*326),'startup');
+	game.add.sprite(milestone3+2500,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
 
 	
-	let windmill = game.add.sprite(9550,h-(100-2)-(1*492), 'windmill');
+	let windmill = game.add.sprite(milestonewindmill,h-(100-2)-(1*492), 'windmill');
 	windmill.animations.add('run');
 	windmill.animations.play('run',8,true);
 
 	
 	//Skill Section
-	let bushes3 = game.add.sprite(9850,h-(100-2)-(0.60*190),'bushes');
+	let bushes3 = game.add.sprite(milestone4-200,h-(100-2)-(0.60*190),'bushes');
 	bushes3.scale.setTo(0.60,0.60);
-	game.add.sprite(10050,h-(100-2)-(1.25*127),'skills').scale.setTo(1.25,1.25);;
+	game.add.sprite(milestone4,h-(100-2)-(1.25*127),'skills').scale.setTo(1.25,1.25);;
 
-	game.add.sprite(10250,h-(100-2)-(0.90*870) - 250,'jsm').scale.setTo(0.90,0.90);
+	game.add.sprite(milestone4+200,h-(100-2)-(0.90*870) - 250,'jsm').scale.setTo(0.90,0.90);
 	//jsm.to({ y: game.world.height-ball.height }, 1000 + Math.random() * 3000, Phaser.Easing.Bounce.In);
-	game.add.sprite(10300,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
-	game.add.sprite(10500,h-(100-2)-(0.90*1255) - 150,'atu').scale.setTo(0.90,0.90);
-	game.add.sprite(10550,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
-	game.add.sprite(10750,h-(100-2)-(0.90*870) - 250,'cdg').scale.setTo(0.90,0.90);
-	game.add.sprite(10800,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
-	game.add.sprite(11000,h-(100-2)-(0.90*1254) - 150,'snr').scale.setTo(0.90,0.90);
-	game.add.sprite(11050,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
-	game.add.sprite(11250,h-(100-2)-(0.90*870) - 250,'dls').scale.setTo(0.90,0.90);
-	game.add.sprite(11300,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
+	game.add.sprite(milestone4+250,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
+	game.add.sprite(milestone4+450,h-(100-2)-(0.90*1255) - 150,'atu').scale.setTo(0.90,0.90);
+	game.add.sprite(milestone4+500,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
+	game.add.sprite(milestone4+700,h-(100-2)-(0.90*870) - 250,'cdg').scale.setTo(0.90,0.90);
+	game.add.sprite(milestone4+750,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
+	game.add.sprite(milestone4+950,h-(100-2)-(0.90*1254) - 150,'snr').scale.setTo(0.90,0.90);
+	game.add.sprite(milestone4+1000,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
+	game.add.sprite(milestone4+1200,h-(100-2)-(0.90*870) - 250,'dls').scale.setTo(0.90,0.90);
+	game.add.sprite(milestone4+1250,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
 
 	// let windmill1 = game.add.sprite(11450,h-(100-2)-(1*492), 'windmill');
 	// windmill1.animations.add('run');
@@ -144,43 +154,43 @@ function gamecreate(){
 
 
 	//Involvement Section
-	let bushes4 = game.add.sprite(11700,h-(100-2)-(0.60*190),'bushes');
+	let bushes4 = game.add.sprite(milestone5-200,h-(100-2)-(0.60*190),'bushes');
 	bushes4.scale.setTo(0.60,0.60);
-	game.add.sprite(11900,h-(100-2)-(1.25*127),'involvement').scale.setTo(1.25,1.25);;
-	game.add.sprite(12150,h-(100-2)-(0.70*458),'rotary').scale.setTo(0.70,0.70);
-	game.add.sprite(12700,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone5,h-(100-2)-(1.25*127),'involvement').scale.setTo(1.25,1.25);;
+	game.add.sprite(milestone5+250,h-(100-2)-(0.70*458),'rotary').scale.setTo(0.70,0.70);
+	game.add.sprite(milestone5+800,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
 
 
 	//Hobbies Section
-	let bushes5 = game.add.sprite(13100,h-(100-2)-(0.60*190),'bushes');
+	let bushes5 = game.add.sprite(milestone6-200,h-(100-2)-(0.60*190),'bushes');
 	bushes5.scale.setTo(0.60,0.60);
-	game.add.sprite(13300,h-(100-2)-(1.25*127),'hobbies').scale.setTo(1.25,1.25);;
-	game.add.sprite(13550,h-(100-2)-(1*434),'travel');
-	game.add.sprite(14850,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
-	game.add.sprite(15200,h-(100-2)-(1*242),'reading');
-	game.add.sprite(15750,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
-	game.add.sprite(16025,h-(100-2)-(1*273),'photography');
-	game.add.sprite(16500,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone6,h-(100-2)-(1.25*127),'hobbies').scale.setTo(1.25,1.25);;
+	game.add.sprite(milestone6+250,h-(100-2)-(1*434),'travel');
+	game.add.sprite(milestone6+1550,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone6+1900,h-(100-2)-(1*242),'reading');
+	game.add.sprite(milestone6+2450,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
+	game.add.sprite(milestone6+2725,h-(100-2)-(1*273),'photography');
+	game.add.sprite(milestone6+3200,h-(100-2)-(0.75*463),'tree').scale.setTo(0.75,0.75);
 	// game.add.sprite(16750,h-(100-2)-(1*195),'gaming');
-	game.add.button(16750,h-(100-2)-(1*195),'gaming',openPokemonGame, this);
+	game.add.button(milestone6+3500,h-(100-2)-(1*195),'gaming',openPokemonGame, this);
 	// game.add.sprite(17350,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
 
 	//Contact Section
-	let bushes6 = game.add.sprite(17400,h-(100-2)-(0.60*190),'bushes');
+	let bushes6 = game.add.sprite(milestone7-200,h-(100-2)-(0.60*190),'bushes');
 	bushes6.scale.setTo(0.60,0.60);
-	game.add.sprite(17600,h-(100-2)-(1.25*127),'contact').scale.setTo(1.25,1.25);;
+	game.add.sprite(milestone7,h-(100-2)-(1.25*127),'contact').scale.setTo(1.25,1.25);;
 	
-	let mail = game.add.sprite(17850,h-(100-2)-(0.50*418), 'mail');
+	let mail = game.add.sprite(milestone7+250,h-(100-2)-(0.50*418), 'mail');
 	mail.scale.setTo(0.50,0.50);
 	mail.animations.add('run');
 	mail.animations.play('run',2,true);
 
-	let mailicon = game.add.button(17850,h-(100-2)-(232),'button',openGmail,this);
+	let mailicon = game.add.button(milestone7+250,h-(100-2)-(232),'button',openGmail,this);
 	mailicon.alpha=0;
 
 
 
-	let linkedbutton = game.add.sprite(18100,h-(100-2)-(1*463),'links');
+	let linkedbutton = game.add.sprite(milestone7+500,h-(100-2)-(1*463),'links');
 	// linkedbutton.anchor.setTo(0.5,0.5);
 	let linkedinHiddenbutton1 = game.add.button(0 ,linkedbutton.y + linkedbutton.height/2,'button',openLinkedInPage,this);//.alpha = 0;
 	linkedinHiddenbutton1.x = linkedbutton.x;
@@ -191,15 +201,15 @@ function gamecreate(){
 	linkedinHiddenbutton.width = 70;
 	linkedinHiddenbutton.alpha = 0;
 	
-	let bushes7 = game.add.sprite(18650,h-(100-2)-(0.60*190),'bushes');
+	let bushes7 = game.add.sprite(milestoneflag-250,h-(100-2)-(0.60*190),'bushes');
 	bushes7.scale.setTo(0.60,0.60);
-	game.add.sprite(18900,h-(100-2) - (1*400),'castle');
+	game.add.sprite(milestoneflag,h-(100-2) - (1*400),'castle');
 
-	flag = game.add.sprite(19400,h-(100-2)- (1*402),'flag');
+	flag = game.add.sprite(milestoneflag+500,h-(100-2)- (1*402),'flag');
 	flag.animations.add('run');
 
 
-	plane = game.add.sprite(20000,h-650,'plane');
+	plane = game.add.sprite(milestoneplane,h-650,'plane');
  	game.physics.arcade.enable(plane);
 	plane.scale.setTo(0.75,0.75);
 	start_text = game.add.text(w/2-200,h-50,"Use ◀ Screen Buttons ▶ or  Arrow Keys",{font:"35px Roboto",fill:"#fff"});
@@ -318,11 +328,11 @@ function gameupdate(){
 	}
 
 
-	if(plane.x<18500){
+	if(plane.x<(18500+offsetNewCompany)){
 		game.time.events.add(Phaser.Timer.SECOND * 3, fadePlane, this);
 	}
 
-	if(plane.x<17000){
+	if(plane.x<(17000+offsetNewCompany)){
 		plane.kill();
 	}
 
@@ -339,7 +349,7 @@ function fadePlane() {
 }
 
 function movePlaneLeft(){
-	if(player.x >=18000 && plane.x >= 20000 ){
+	if(player.x >=(18000+offsetNewCompany) && plane.x >= (20000+offsetNewCompany) ){
 			plane.body.velocity.x = -150;
 	}
 	game.add.tween(end_text).to( { alpha: 1 }, 1000, Phaser.Easing.Linear.None, true);

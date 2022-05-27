@@ -55,6 +55,7 @@ function loadImages(){
 	game.load.image('colahead','assets/colahead.png');
 	game.load.image('college','assets/college.png');
 	game.load.image('company','assets/company.png');
+	game.load.image('company2','assets/company2.png');
 	game.load.image('contact','assets/contact.png');
 	game.load.image('dls','assets/dls.png');
 	game.load.image('education','assets/education.png');

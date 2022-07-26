@@ -51,6 +51,7 @@ function loadImages(){
 	game.load.image('bushes','assets/bushes.png');
 	game.load.image('castle','assets/castle.png');
 	game.load.image('cdg','assets/cdg.png');
+	game.load.image('jpj','assets/jpj.png');
 	game.load.image('mountain','assets/mountain.png');
 	game.load.image('colahead','assets/colahead.png');
 	game.load.image('college','assets/college.png');

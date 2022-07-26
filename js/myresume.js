@@ -125,7 +125,7 @@ function gamecreate(){
 	game.add.sprite(milestone3+2100,h-(100-2)-(1*326),'startup');
 	game.add.sprite(milestone3+2500,h-(100-2)-(0.75*448),'treeball').scale.setTo(0.75,0.75);
 
-	
+
 	let windmill = game.add.sprite(milestonewindmill,h-(100-2)-(1*492), 'windmill');
 	windmill.animations.add('run');
 	windmill.animations.play('run',8,true);
@@ -147,7 +147,8 @@ function gamecreate(){
 	game.add.sprite(milestone4+1000,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
 	game.add.sprite(milestone4+1200,h-(100-2)-(0.90*870) - 250,'dls').scale.setTo(0.90,0.90);
 	game.add.sprite(milestone4+1250,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
-
+	game.add.sprite(milestone4+1450,h-(100-2)-(0.90*1254) - 150,'jpj').scale.setTo(0.90,0.90);
+	game.add.sprite(milestone4+1500,h-(100-2)-(0.30*190),'bushes').scale.setTo(0.30,0.30);
 	// let windmill1 = game.add.sprite(11450,h-(100-2)-(1*492), 'windmill');
 	// windmill1.animations.add('run');
 	// windmill1.animations.play('run',8,true);
@@ -213,16 +214,16 @@ function gamecreate(){
  	game.physics.arcade.enable(plane);
 	plane.scale.setTo(0.75,0.75);
 	start_text = game.add.text(w/2-200,h-50,"Use ◀ Screen Buttons ▶ or  Arrow Keys",{font:"35px Roboto",fill:"#fff"});
-	end_text = game.add.text(platformLength - w/2 - 200,h-50,"All the design elements are created by Sahil.",{font:"35px Roboto",fill:"#fff"});
+	end_text = game.add.text(platformLength - w/2 - 100,h-50,"Designed with ❤ by Sahil",{font:"35px Roboto",fill:"#fff"});
 	end_text.alpha=0;
-	let alphaText = game.add.text(platformLength - w/2 - 100,h-10,"*Fun Fact*: The Game size is only 600KB including graphics.",{font:"20px Roboto",fill:"#fff"});
+	let alphaText = game.add.text(platformLength - w/2 - 100,h-10,"*Fun Fact*: Game is less than 600KB in size",{font:"20px Roboto",fill:"#fff"});
 	alphaText.alpha=0.6;
 	player = game.add.sprite(100,starting_y_point,'sahil');
 	player.animations.add('run');
 
 	//	player entry animation of bounce
 	var entryTween = game.add.tween(player);
- 	entryTween.to({x:start_point,y:h-(100-2)-player.height},2000,Phaser.Easing.Bounce.Out, true);
+ 	entryTween.to({x:start_point,y:h-(100-2)-player.height},1500,Phaser.Easing.Bounce.Out, true);
  	entryTween.start();
 	cursors = game.input.keyboard.createCursorKeys();
 	game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -311,6 +312,12 @@ function gameupdate(){
 	}else{
 		player.animations.stop('run');
 	}
+
+	// if(player.x >=10000 && player.x <= 15000 && player.y == h-(100-2)-player.height){
+	// 	game.add.tween(player).to({x:10050,y:(h+650)-2},2000,Phaser.Easing.Bounce.Out, true).start();
+	// 	player.x=10050;
+	// 	player.y = h+450;
+	// }
 	
 	if(player.x<=0&&direction=="right"){
 		player.x =0;
@@ -328,7 +335,7 @@ function gameupdate(){
 	}
 
 
-	if(plane.x<(18500+offsetNewCompany)){
+	if(plane.x<(18000+offsetNewCompany)){
 		game.time.events.add(Phaser.Timer.SECOND * 3, fadePlane, this);
 	}
 
@@ -345,7 +352,7 @@ function gameupdate(){
 }
 
 function fadePlane() {
-		game.add.tween(plane).to( { alpha: 0 }, 1000, Phaser.Easing.Linear.None, true);
+		game.add.tween(plane).to( { alpha: 0 }, 500, Phaser.Easing.Linear.None, true);
 }
 
 function movePlaneLeft(){
